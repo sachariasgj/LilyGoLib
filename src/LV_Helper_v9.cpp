@@ -279,7 +279,7 @@ void beginLvglHelper(LilyGo_Display &board, bool debug)
     log_d("lv init successfully!");
 }
 
-
+#if 0
 extern "C" void lv_mem_init(void)
 {
     return; /*Nothing to init*/
@@ -333,6 +333,7 @@ lv_result_t lv_mem_test_core(void)
     /*Not supported*/
     return LV_RESULT_OK;
 }
+#endif
 
 void lv_set_default_group(lv_group_t *group)
 {

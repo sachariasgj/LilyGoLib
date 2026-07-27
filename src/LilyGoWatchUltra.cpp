@@ -620,7 +620,7 @@ bool LilyGoUltra::installSD()
 #endif /*EXPANDS_SD_DET*/
 
     // Set mount point to /fs
-    if (!SD.begin(SD_CS, SPI, 4000000U, "/sd")) {
+    if (!SD.begin(SD_CS, SPI, 40000000U, "/sd")) {
         log_e("Failed to detect SD Card!!");
         return false;
     }
