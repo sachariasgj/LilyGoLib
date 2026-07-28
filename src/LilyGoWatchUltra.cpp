@@ -1093,7 +1093,8 @@ bool LilyGoUltra::initTouch()
         log_d("TouchPanel using 0x1A address");
     }
     touch.setPins(TP_RST, TP_INT);
-    res = touch.begin(Wire, touch_panel_addr, TP_SDA, TP_SCL);
+    constexpr int USE_EXISTING_I2C = -1;
+    res = touch.begin(Wire, touch_panel_addr, USE_EXISTING_I2C, USE_EXISTING_I2C);
     if (!res) {
         log_e("Failed to find TouchPanel!");
     } else {
